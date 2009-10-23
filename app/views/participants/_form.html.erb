@@ -1,0 +1,21 @@
+<% form_for([form.meeting,form]) do |f| %>
+<%= f.error_messages %>
+
+  <div>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+  </div>
+
+  <div>
+        <%= f.label :collection_of_unavailable_days %>
+        <%= f.text_field :collection_of_unavailable_days %>
+  </div>
+
+
+
+
+
+  <div>
+    <%= f.submit 'Submit' %>
+  </div>
+<% end %>

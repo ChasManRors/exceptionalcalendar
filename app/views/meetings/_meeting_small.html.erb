@@ -1,0 +1,28 @@
+<% div_for(meeting_small) do %>
+
+  <div>
+    <span>num_days_forward_to_consider:</span>
+    <%= meeting_small.num_days_forward_to_consider %>  
+  </div>
+
+  <div>
+    <span>title:</span>
+    <%= meeting_small.title %>  
+  </div>
+
+  <div>
+    <span>num_days_before_scheduling:</span>
+    <%= meeting_small.num_days_before_scheduling %>  
+  </div>
+
+  <div>
+    <span>number_of_people_who_need_to_respond_before_suggesting_a_date:</span>
+    <%= meeting_small.number_of_people_who_need_to_respond_before_suggesting_a_date %>  
+  </div>
+
+  <div>
+    <span>tentative_days:</span>
+    <%= meeting_small.tentative_days %>  
+  </div>
+
+<% end %>

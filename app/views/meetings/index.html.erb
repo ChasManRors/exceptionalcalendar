@@ -1,0 +1,7 @@
+<h1>Listing meetings</h1>
+
+<%= render :partial => 'meetings/meeting', :collection => @meetings %>
+
+<%= link_to 'new meeting', new_meeting_path(@meeting) %>
+
+<%= will_paginate @meetings %>

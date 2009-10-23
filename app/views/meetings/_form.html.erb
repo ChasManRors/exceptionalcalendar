@@ -1,0 +1,36 @@
+<% form_for([form]) do |f| %>
+<%= f.error_messages %>
+
+  <div>
+        <%= f.label :num_days_forward_to_consider %>
+        <%= f.text_field :num_days_forward_to_consider %>
+  </div>
+
+  <div>
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+  </div>
+
+  <div>
+        <%= f.label :num_days_before_scheduling %>
+        <%= f.text_field :num_days_before_scheduling %>
+  </div>
+
+  <div>
+        <%= f.label :number_of_people_who_need_to_respond_before_suggesting_a_date %>
+        <%= f.text_field :number_of_people_who_need_to_respond_before_suggesting_a_date %>
+  </div>
+
+  <div>
+        <%= f.label :tentative_days %>
+        <%= f.text_field :tentative_days %>
+  </div>
+
+
+
+
+
+  <div>
+    <%= f.submit 'Submit' %>
+  </div>
+<% end %>

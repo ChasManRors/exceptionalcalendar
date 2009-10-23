@@ -1,0 +1,7 @@
+@app.name = 'whencanyoumeet'
+route [:meetings, :participants]
+add_attrs :meetings=>"title:string tentative_days:string num_days_before_scheduling:integer num_days_forward_to_consider:integer number_of_people_who_need_to_respond_before_suggesting_a_date:integer", :participants=>"name:string collection_of_unavailable_days:string"
+route [:meetings, :participants]
+Participant.belongs_to(Meeting)
+Meeting.has_many(Participant)
+generate 

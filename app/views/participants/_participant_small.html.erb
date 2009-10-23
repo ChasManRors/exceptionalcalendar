@@ -1,0 +1,13 @@
+<% div_for(participant_small) do %>
+
+<div>
+  <span>name: <%= participant_small.name %> 
+  :unavailable <%= participant_small.collection_of_unavailable_days %>  
+
+  <%= link_to 'edit', edit_meeting_participant_path(participant_small.meeting,participant_small) %>
+
+  </span>
+  
+</div>
+
+<% end %>

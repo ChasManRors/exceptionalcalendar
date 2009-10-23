@@ -1,0 +1,6 @@
+<h1>Listing participants</h1>
+
+
+<%= render :partial => 'participants/participant', :collection => @participants %>
+
+<%= link_to 'new participant', new_meeting_participant_path(@meeting, @participant) %>

@@ -1,0 +1,43 @@
+<% div_for(meeting) do %>
+
+<h3>Meeting created <%= meeting.created_at.strftime("%m/%d/%Y %I:%M%p") %>
+  </h3>
+
+  <div>
+    <b>num_days_forward_to_consider:</b>
+    <%=h meeting.num_days_forward_to_consider %>
+  </div>
+
+  <div>
+    <b>title:</b>
+    <%=h meeting.title %>
+  </div>
+
+  <div>
+    <b>num_days_before_scheduling:</b>
+    <%=h meeting.num_days_before_scheduling %>
+  </div>
+
+  <div>
+    <b>number_of_people_who_need_to_respond_before_suggesting_a_date:</b>
+    <%=h meeting.number_of_people_who_need_to_respond_before_suggesting_a_date %>
+  </div>
+
+  <div>
+    <b>tentative_days:</b>
+    <%=h meeting.tentative_days %>
+  </div>
+
+<% end %>
+
+  
+<div>
+  <h4>list of participants</h4>
+  <%= render :partial => 'participants/participant_small', :collection => meeting.participants %>
+  
+  
+</div>
+<div>
+  <h4>make a new participant</h4>
+  <%= render :partial => 'participants/form', :object => meeting.participants.new %>
+</div>
