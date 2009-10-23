@@ -14,8 +14,14 @@ class MeetingsController < ApplicationController
   end
   def find_meetings
     setup_enclosing_resources
-    @meetings = Meeting.paginate :per_page => 1, :page => params[:page], :order => 'created_at DESC'
-    #@meetings = Meeting.find(:all).reverse
+    search = params[:search]
+
+    if search.blank?
+      @meetings = Meeting.paginate :per_page => 1, :page => params[:page], :order => 'created_at DESC'
+    else
+      @meetings = Meeting.paginate :per_page => 1, :page => params[:page], :order => 'created_at DESC', :conditions =>  ['title LIKE ?', "%#{search}%"]
+    end
+
   end
   def new_meeting
     setup_enclosing_resources
@@ -58,7 +64,7 @@ class MeetingsController < ApplicationController
   def create
 
     @initial_days = @meeting.calc_tentative_days()
-#    @meeting.tentative_days =  @initial_days.join(" ")
+    #    @meeting.tentative_days =  @initial_days.join(" ")
 
     respond_to do |format|
       if @meeting.save

@@ -21,10 +21,12 @@ class Meeting < ActiveRecord::Base
   end
 
   def calc_current_unavailable_days
-    # self.participants.map(&:collection_of_unavailable_days).map(&:strip)
       self.participants.map(&:collection_of_unavailable_days).map(&:strip).join(' ').split
   end
 
-
+  def calc_current_unavailable_days_sans(participant)
+    debugger
+    (self.participants.reject{|p| p.id == participant.id}).map(&:collection_of_unavailable_days).map(&:strip).join(' ').split
+  end
 
 end

@@ -1,7 +1,16 @@
-<h1>Listing meetings</h1>
 
-<%= render :partial => 'meetings/meeting', :collection => @meetings %>
+
+<% form_tag meetings_path, :method => 'get' do %>
+<p>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search", :name => nil %>
+</p>
+<% end %>
 
 <%= link_to 'new meeting', new_meeting_path(@meeting) %>
+
+<h1>Meetings</h1>
+
+<%= render :partial => 'meetings/meeting', :collection => @meetings %>
 
 <%= will_paginate @meetings %>
