@@ -1,2 +1,2 @@
-mislav-will_paginate --version '>= 2.0' --source http://gemcutter.org
+mislav-will_paginate --source gems.github.com
 
