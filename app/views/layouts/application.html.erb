@@ -5,15 +5,112 @@
   <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <title>When can We All Get Together</title>
+
+    <%= stylesheet_link_tag 'style' %>
+
     <%= stylesheet_link_tag 'bluetrip/css/ie' %>
     <%= stylesheet_link_tag 'bluetrip/css/screen' %>
     <%= stylesheet_link_tag 'bluetrip/css/style' %>
     <%= javascript_include_tag "jquery-1.2.6.min" %>
+
+
+
   </head>
   <body>
-    <div class="container">
-      <p style="color: green"><%= flash[:notice] %></p>
-      <%= yield  %>
+
+    <div id="wrapper">
+      
+      <div id="header">
+        <div id="menu">
+          <ul>
+            <li class="current_page_item"><a href="#">Home</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Photos</a></li>
+            <li><a href="#">Links</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <!-- end #menu -->
+        <div id="search">
+          <form method="get" action="">
+            <fieldset>
+              <input type="text" name="s" id="search-text" size="15" />
+              <input type="submit" id="search-submit" value="Search" />
+            </fieldset>
+          </form>
+        </div>
+        <!-- end #search -->
+      </div>
+      <!-- end #header -->
+
+<!-- charles -->
+      <div id="logo">
+
+this is the list of possible
+<h1>this is the list of possible 1 </h1>
+<h2>this is the list of possible 2 </h2>
+<h3>this is the list of possible 3 </h3>
+<h4>this is the list of possible 4 </h4>
+
+        <!-- <h1><a href="#">Reckoning </a></h1> -->
+
+        <!-- <p><em> template design by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a></em></p> -->
+      </div>
+
+      <hr />
+      <!-- end #logo -->
+      <!-- end #header-wrapper -->
+      
+      <div id="page">
+        <div id="content">
+        
+          <div class="container">
+            <p style="color: green"> <%= flash[:notice] %></p>
+            <%= yield  %>
+          </div>
+
+        </div>
+        <!-- end #content -->
+        <div id="sidebar">
+          <ul>
+            <li>
+              <h2>Aliquam tempus</h2>
+              <p>Mauris vitae nisl nec metus placerat perdiet est. Phasellus dapibus semper urna. Pellentesque ornare, orci in consectetuer hendrerit, volutpat.</p>
+            </li>
+            <li>
+              <h2>Turpis nulla</h2>
+              <ul>
+                <li><a href="#"></a><a href="#">Nec metus sed donec</a></li>
+                <li><a href="#">Magna lacus bibendum mauris</a></li>
+                <li><a href="#">Velit semper nisi molestie</a></li>
+                <li><a href="#">Eget tempor eget nonummy</a></li>
+                <li><a href="#">Nec metus sed donec</a></li>
+              </ul>
+            </li>
+            <li>
+              <h2>Turpis nulla</h2>
+              <ul>
+                <li><a href="#"></a><a href="#">Nec metus sed donec</a></li>
+                <li><a href="#">Magna lacus bibendum mauris</a></li>
+                <li><a href="#">Velit semper nisi molestie</a></li>
+                <li><a href="#">Eget tempor eget nonummy</a></li>
+                <li><a href="#">Nec metus sed donec</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <!-- end #sidebar -->
+        <div style="clear: both;">&nbsp;</div>
+      </div>
+      <!-- end #page -->
+      
+      <div id="footer">
+        <p>Copyright (c) 2008 Sitename.com. All rights reserved. Design by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>.</p>
+      </div>
+      <!-- end #footer -->
     </div>
+
+
+
   </body>
 </html>
