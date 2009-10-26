@@ -10481,3 +10481,137 @@ Rendered participants/_participant_small (3.6ms)
 Rendered participants/_form (10.7ms)
 Rendered meetings/_meeting (43.8ms)
 Completed in 82ms (View: 59, DB: 4) | 200 OK [http://localhost/?page=5&search=tes]
+
+
+Processing MeetingsController#new (for 127.0.0.1 at 2009-10-26 10:12:03) [GET]
+Rendering template within layouts/application
+Rendering meetings/new
+Rendered meetings/_form (19.5ms)
+Completed in 45ms (View: 27, DB: 0) | 200 OK [http://localhost/meetings/new]
+
+
+Processing MeetingsController#new (for 127.0.0.1 at 2009-10-26 10:13:09) [GET]
+Rendering template within layouts/application
+Rendering meetings/new
+Rendered meetings/_form (10.3ms)
+Completed in 36ms (View: 19, DB: 0) | 200 OK [http://localhost/meetings/new]
+
+
+Processing MeetingsController#new (for 127.0.0.1 at 2009-10-26 10:19:08) [GET]
+Rendering template within layouts/application
+Rendering meetings/new
+Rendered meetings/_form (10.4ms)
+Completed in 27ms (View: 15, DB: 0) | 200 OK [http://localhost/meetings/new]
+
+
+Processing MeetingsController#index (for 127.0.0.1 at 2009-10-26 10:19:18) [GET]
+  [4;35;1mMeeting Load (1.0ms)[0m   [0mSELECT * FROM "meetings" ORDER BY created_at DESC LIMIT 1 OFFSET 0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "meetings" [0m
+Rendering template within layouts/application
+Rendering meetings/index
+  [4;35;1mParticipant Load (0.7ms)[0m   [0mSELECT * FROM "participants" WHERE ("participants".meeting_id = 19) [0m
+  [4;36;1mMeeting Load (0.5ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 19) [0m
+Rendered participants/_participant_small (3.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 19) [0m
+Rendered participants/_participant_small (2.3ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 19) [0m
+Rendered participants/_form (6.6ms)
+Rendered meetings/_meeting (28.1ms)
+Completed in 51ms (View: 36, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing MeetingsController#index (for 127.0.0.1 at 2009-10-26 10:19:44) [GET]
+  [4;35;1mMeeting Load (1.0ms)[0m   [0mSELECT * FROM "meetings" ORDER BY created_at DESC LIMIT 1 OFFSET 0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "meetings" [0m
+Rendering template within layouts/application
+Rendering meetings/index
+  [4;35;1mParticipant Load (0.6ms)[0m   [0mSELECT * FROM "participants" WHERE ("participants".meeting_id = 19) [0m
+  [4;36;1mMeeting Load (0.6ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 19) [0m
+Rendered participants/_participant_small (3.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 19) [0m
+Rendered participants/_participant_small (3.7ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 19) [0m
+Rendered participants/_form (6.3ms)
+Rendered meetings/_meeting (40.0ms)
+Completed in 127ms (View: 113, DB: 3) | 200 OK [http://localhost/]
+
+
+Processing MeetingsController#new (for 127.0.0.1 at 2009-10-26 10:19:48) [GET]
+Rendering template within layouts/application
+Rendering meetings/new
+Rendered meetings/_form (12.2ms)
+Completed in 30ms (View: 18, DB: 0) | 200 OK [http://localhost/meetings/new]
+
+
+Processing MeetingsController#new (for 127.0.0.1 at 2009-10-26 10:34:17) [GET]
+Rendering template within layouts/application
+Rendering meetings/new
+Rendered meetings/_form (18.7ms)
+Completed in 59ms (View: 42, DB: 0) | 200 OK [http://localhost/meetings/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-26 10:34:18) [GET]
+
+ActionController::RoutingError (No route matches "/public/stylesheets/style.css" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-26 10:34:20) [GET]
+
+ActionController::RoutingError (No route matches "/public/stylesheets/style.css" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MeetingsController#index (for 127.0.0.1 at 2009-10-26 10:34:39) [GET]
+  [4;35;1mMeeting Load (0.9ms)[0m   [0mSELECT * FROM "meetings" ORDER BY created_at DESC LIMIT 1 OFFSET 0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "meetings" [0m
+Rendering template within layouts/application
+Rendering meetings/index
+  [4;35;1mParticipant Load (0.5ms)[0m   [0mSELECT * FROM "participants" WHERE ("participants".meeting_id = 19) [0m
+  [4;36;1mMeeting Load (0.5ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 19) [0m
+Rendered participants/_participant_small (3.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 19) [0m
+Rendered participants/_participant_small (1.9ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 19) [0m
+Rendered participants/_form (5.6ms)
+Rendered meetings/_meeting (24.7ms)
+Completed in 45ms (View: 31, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-26 10:34:39) [GET]
+
+ActionController::RoutingError (No route matches "/public/stylesheets/style.css" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
