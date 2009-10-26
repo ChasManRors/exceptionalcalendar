@@ -13,13 +13,9 @@
     <%= stylesheet_link_tag 'bluetrip/css/style' %>
     <%= javascript_include_tag "jquery-1.2.6.min" %>
 
-
-
   </head>
   <body>
-
     <div id="wrapper">
-      
       <div id="header">
         <div id="menu">
           <ul>
@@ -32,45 +28,50 @@
         </div>
         <!-- end #menu -->
         <div id="search">
-          <form method="get" action="">
-            <fieldset>
-              <input type="text" name="s" id="search-text" size="15" />
-              <input type="submit" id="search-submit" value="Search" />
-            </fieldset>
-          </form>
+          <!-- <form method="get" action=""> -->
+          <!--   <fieldset> -->
+          <!--     <input type="text" name="s" id="search-text" size="15" /> -->
+          <!--     <input type="submit" id="search-submit" value="Search" /> -->
+          <!--   </fieldset> -->
+          <!-- </form> -->
+
+<% form_tag meetings_path, :method => 'get' do %>
+<p>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search", :name => nil %>
+</p>
+<% end %>
+
+
         </div>
         <!-- end #search -->
       </div>
       <!-- end #header -->
 
-<!-- charles -->
+      <!-- charles -->
       <div id="logo">
-
-this is the list of possible
-<h1>this is the list of possible 1 </h1>
-<h2>this is the list of possible 2 </h2>
-<h3>this is the list of possible 3 </h3>
-<h4>this is the list of possible 4 </h4>
-
+        <div id="maininfo">
+          <h1>
+            Here is where the Meeting info goes
+          </h1>
+        </div>
         <!-- <h1><a href="#">Reckoning </a></h1> -->
-
         <!-- <p><em> template design by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a></em></p> -->
       </div>
-
       <hr />
       <!-- end #logo -->
       <!-- end #header-wrapper -->
-      
       <div id="page">
         <div id="content">
-        
           <div class="container">
-            <p style="color: green"> <%= flash[:notice] %></p>
+            <p style="color: green">
+            <%= flash[:notice] %>
+            </p>
             <%= yield  %>
           </div>
-
         </div>
         <!-- end #content -->
+
         <div id="sidebar">
           <ul>
             <li>

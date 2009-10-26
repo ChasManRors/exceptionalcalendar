@@ -1,11 +1,6 @@
 
 
-<% form_tag meetings_path, :method => 'get' do %>
-<p>
-  <%= text_field_tag :search, params[:search] %>
-  <%= submit_tag "Search", :name => nil %>
-</p>
-<% end %>
+<!-- moved form_tag meetings_path, :method => 'get' do %> into application.html.erb -->
 
 <%= link_to 'new meeting', new_meeting_path(@meeting) %>
 
