@@ -25,7 +25,7 @@
     <%=h meeting.number_of_people_who_need_to_respond_before_suggesting_a_date %>
   </div>
 
-  <div>
+  <div id="participants">
     <b>tentative_days:</b>
     <%=h meeting.tentative_days %>
   </div>
@@ -34,12 +34,12 @@
 
   
 <div>
-  <h4>Participants</h4>
+  <h1>Participants</h1>
   <%= render :partial => 'participants/participant_small', :collection => meeting.participants %>
   
   
 </div>
 <div>
-  <h4>Create Participant</h4>
+  <h1>Create Participant</h1>
   <%= render :partial => 'participants/form', :object => meeting.participants.new %>
 </div>

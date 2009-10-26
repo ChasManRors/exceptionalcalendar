@@ -19,10 +19,12 @@
       <div id="header">
         <div id="menu">
           <ul>
-            <li class="current_page_item"><a href="#">Home</a></li>
-            <li><a href="#">Blog</a></li>
+            <li class="current_page_item">
+              <%= link_to "Home", :controller => "meetings", :action => "index" %></li>
+            <li>
+              <%= link_to "New", :controller => "meetings", :action => "new" %></li>
             <li><a href="#">Photos</a></li>
-            <li><a href="#">Links</a></li>
+            <li><a href="#">Something</a></li>
             <li><a href="#">Contact</a></li>
           </ul>
         </div>

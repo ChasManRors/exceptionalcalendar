@@ -9838,3 +9838,393 @@ Rendered participants/_participant_small (1.8ms)
 Rendered participants/_form (5.5ms)
 Rendered meetings/_meeting (32.3ms)
 Completed in 52ms (View: 39, DB: 3) | 200 OK [http://localhost/meetings?search=lunch]
+
+
+Processing ParticipantsController#edit (for 127.0.0.1 at 2009-10-25 21:48:39) [GET]
+  Parameters: {"meeting_id"=>"13", "id"=>"15"}
+  [4;35;1mMeeting Load (0.9ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 13) [0m
+  [4;36;1mParticipant Load (0.9ms)[0m   [0;1mSELECT * FROM "participants" WHERE ("participants"."id" = 15 AND ("participants".meeting_id = 13)) [0m
+Rendering template within layouts/application
+Rendering participants/edit
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 13) [0m
+Rendered participants/_form (17.5ms)
+Completed in 69ms (View: 33, DB: 2) | 200 OK [http://localhost/meetings/13/participants/15/edit]
+
+
+Processing ParticipantsController#update (for 127.0.0.1 at 2009-10-25 21:48:48) [PUT]
+  Parameters: {"meeting_id"=>"13", "participant"=>{"name"=>"Charles", "collection_of_unavailable_days"=>""}, "commit"=>"Submit", "authenticity_token"=>"DLqMEpzEhFX/wYYOlhTviu6wym9oRB5ym9Q+/STuEHI=", "id"=>"15"}
+  [4;36;1mMeeting Load (0.5ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 13) [0m
+  [4;35;1mParticipant Load (0.4ms)[0m   [0mSELECT * FROM "participants" WHERE ("participants"."id" = 15 AND ("participants".meeting_id = 13)) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 13) [0m
+
+***** Debugger requested, but was not available: Start server with --debugger to enable *****
+  [4;35;1mParticipant Load (0.9ms)[0m   [0mSELECT * FROM "participants" WHERE ("participants".meeting_id = 13) [0m
+  [4;36;1mParticipant Update (0.6ms)[0m   [0;1mUPDATE "participants" SET "updated_at" = '2009-10-26 01:48:48', "collection_of_unavailable_days" = '' WHERE "id" = 15[0m
+  [4;35;1mMeeting Update (0.3ms)[0m   [0mUPDATE "meetings" SET "updated_at" = '2009-10-26 01:48:48', "tentative_days" = '10/30 11/02 11/06 11/09' WHERE "id" = 13[0m
+Redirected to http://localhost:3000/meetings/13
+Completed in 52ms (DB: 3) | 302 Found [http://localhost/meetings/13/participants/15]
+
+
+Processing MeetingsController#show (for 127.0.0.1 at 2009-10-25 21:48:48) [GET]
+  Parameters: {"id"=>"13"}
+  [4;36;1mMeeting Load (0.4ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 13) [0m
+Rendering template within layouts/application
+Rendering meetings/show
+  [4;35;1mParticipant Load (0.9ms)[0m   [0mSELECT * FROM "participants" WHERE ("participants".meeting_id = 13) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 13) [0m
+Rendered participants/_participant_small (2.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 13) [0m
+Rendered participants/_participant_small (2.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 13) [0m
+Rendered participants/_participant_small (2.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 13) [0m
+Rendered participants/_participant_small (1.9ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 13) [0m
+Rendered participants/_participant_small (2.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 13) [0m
+Rendered participants/_form (5.8ms)
+Rendered meetings/_meeting (25.8ms)
+Completed in 66ms (View: 47, DB: 1) | 200 OK [http://localhost/meetings/13]
+
+
+Processing MeetingsController#show (for 127.0.0.1 at 2009-10-25 21:49:01) [GET]
+  Parameters: {"id"=>"13"}
+  [4;36;1mMeeting Load (0.8ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 13) [0m
+Rendering template within layouts/application
+Rendering meetings/show
+  [4;35;1mParticipant Load (1.5ms)[0m   [0mSELECT * FROM "participants" WHERE ("participants".meeting_id = 13) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 13) [0m
+Rendered participants/_participant_small (2.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 13) [0m
+Rendered participants/_participant_small (1.9ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 13) [0m
+Rendered participants/_participant_small (1.9ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 13) [0m
+Rendered participants/_participant_small (1.9ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 13) [0m
+Rendered participants/_participant_small (1.9ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 13) [0m
+Rendered participants/_form (6.2ms)
+Rendered meetings/_meeting (26.3ms)
+Completed in 66ms (View: 29, DB: 2) | 200 OK [http://localhost/meetings/13]
+
+
+Processing MeetingsController#index (for 127.0.0.1 at 2009-10-25 21:49:41) [GET]
+  Parameters: {"search"=>""}
+  [4;36;1mMeeting Load (1.6ms)[0m   [0;1mSELECT * FROM "meetings" ORDER BY created_at DESC LIMIT 1 OFFSET 0[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM "meetings" [0m
+Rendering template within layouts/application
+Rendering meetings/index
+  [4;36;1mParticipant Load (2.9ms)[0m   [0;1mSELECT * FROM "participants" WHERE ("participants".meeting_id = 17) [0m
+  [4;35;1mMeeting Load (0.5ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 17) [0m
+Rendered participants/_participant_small (3.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 17) [0m
+Rendered participants/_participant_small (2.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 17) [0m
+Rendered participants/_form (6.9ms)
+Rendered meetings/_meeting (116.4ms)
+Completed in 148ms (View: 123, DB: 5) | 200 OK [http://localhost/meetings?search=]
+
+
+Processing MeetingsController#new (for 127.0.0.1 at 2009-10-25 21:49:50) [GET]
+Rendering template within layouts/application
+Rendering meetings/new
+Rendered meetings/_form (13.1ms)
+Completed in 46ms (View: 27, DB: 0) | 200 OK [http://localhost/meetings/new]
+
+
+Processing MeetingsController#create (for 127.0.0.1 at 2009-10-25 21:50:13) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"DLqMEpzEhFX/wYYOlhTviu6wym9oRB5ym9Q+/STuEHI=", "meeting"=>{"num_days_forward_to_consider"=>"100", "title"=>"Test100", "num_days_before_scheduling"=>"1", "number_of_people_who_need_to_respond_before_suggesting_a_date"=>"4", "tentative_days"=>""}}
+  [4;36;1mMeeting Create (0.4ms)[0m   [0;1mINSERT INTO "meetings" ("num_days_forward_to_consider", "created_at", "title", "updated_at", "num_days_before_scheduling", "number_of_people_who_need_to_respond_before_suggesting_a_date", "tentative_days") VALUES(100, '2009-10-26 01:50:13', 'Test100', '2009-10-26 01:50:13', 1, 4, '10/27 10/28 10/29 10/30 11/02 11/03 11/04 11/05 11/06 11/09 11/10 11/11 11/12 11/13 11/16 11/17 11/18 11/19 11/20 11/23 11/24 11/25 11/26 11/27 11/30 12/01 12/02 12/03 12/04 12/07 12/08 12/09 12/10 12/11 12/14 12/15 12/16 12/17 12/18 12/21 12/22 12/23 12/24 12/25 12/28 12/29 12/30 12/31 01/01 01/04 01/05 01/06 01/07 01/08 01/11 01/12 01/13 01/14 01/15 01/18 01/19 01/20 01/21 01/22 01/25 01/26 01/27 01/28 01/29 02/01 02/02 02/03')[0m
+Redirected to http://localhost:3000/meetings
+Completed in 140ms (DB: 0) | 302 Found [http://localhost/meetings]
+
+
+Processing MeetingsController#index (for 127.0.0.1 at 2009-10-25 21:50:13) [GET]
+  [4;35;1mMeeting Load (0.9ms)[0m   [0mSELECT * FROM "meetings" ORDER BY created_at DESC LIMIT 1 OFFSET 0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "meetings" [0m
+Rendering template within layouts/application
+Rendering meetings/index
+  [4;35;1mParticipant Load (0.3ms)[0m   [0mSELECT * FROM "participants" WHERE ("participants".meeting_id = 18) [0m
+  [4;36;1mMeeting Load (0.5ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 18) [0m
+Rendered participants/_form (6.8ms)
+Rendered meetings/_meeting (28.2ms)
+Completed in 46ms (View: 34, DB: 2) | 200 OK [http://localhost/meetings]
+
+
+Processing ParticipantsController#create (for 127.0.0.1 at 2009-10-25 21:50:41) [POST]
+  Parameters: {"meeting_id"=>"18", "participant"=>{"name"=>"test", "collection_of_unavailable_days"=>"12/14 12/15 12/16 12/17 12/18 12/21 12/22 12/23 12/24 12/25 12/28 12/29 12/30 12/31 01/01 01/04 01/05 01/06 01/07 01/08 01/11 01/12 01/13 01/14 01/15 01/18 01/19 01/20 01/21 01/22 01/25 01/26 01/27 01/28 01/29 02/01 02/02 02/03"}, "commit"=>"Submit", "authenticity_token"=>"DLqMEpzEhFX/wYYOlhTviu6wym9oRB5ym9Q+/STuEHI="}
+  [4;35;1mMeeting Load (1.2ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 18) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 18) [0m
+  [4;35;1mParticipant Load (0.3ms)[0m   [0mSELECT * FROM "participants" WHERE ("participants".meeting_id = 18) [0m
+  [4;36;1mParticipant Create (0.3ms)[0m   [0;1mINSERT INTO "participants" ("name", "meeting_id", "created_at", "updated_at", "collection_of_unavailable_days") VALUES('test', 18, '2009-10-26 01:50:41', '2009-10-26 01:50:41', '12/14 12/15 12/16 12/17 12/18 12/21 12/22 12/23 12/24 12/25 12/28 12/29 12/30 12/31 01/01 01/04 01/05 01/06 01/07 01/08 01/11 01/12 01/13 01/14 01/15 01/18 01/19 01/20 01/21 01/22 01/25 01/26 01/27 01/28 01/29 02/01 02/02 02/03')[0m
+  [4;35;1mMeeting Update (0.3ms)[0m   [0mUPDATE "meetings" SET "updated_at" = '2009-10-26 01:50:41', "tentative_days" = '10/27 10/28 10/29 10/30 11/02 11/03 11/04 11/05 11/06 11/09 11/10 11/11 11/12 11/13 11/16 11/17 11/18 11/19 11/20 11/23 11/24 11/25 11/26 11/27 11/30 12/01 12/02 12/03 12/04 12/07 12/08 12/09 12/10 12/11' WHERE "id" = 18[0m
+Redirected to http://localhost:3000/meetings/18
+Completed in 157ms (DB: 2) | 302 Found [http://localhost/meetings/18/participants]
+
+
+Processing MeetingsController#show (for 127.0.0.1 at 2009-10-25 21:50:41) [GET]
+  Parameters: {"id"=>"18"}
+  [4;36;1mMeeting Load (0.5ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 18) [0m
+Rendering template within layouts/application
+Rendering meetings/show
+  [4;35;1mParticipant Load (0.5ms)[0m   [0mSELECT * FROM "participants" WHERE ("participants".meeting_id = 18) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 18) [0m
+Rendered participants/_participant_small (2.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 18) [0m
+Rendered participants/_form (6.2ms)
+Rendered meetings/_meeting (15.0ms)
+Completed in 125ms (View: 41, DB: 1) | 200 OK [http://localhost/meetings/18]
+
+
+Processing MeetingsController#index (for 127.0.0.1 at 2009-10-25 21:50:56) [GET]
+  [4;36;1mMeeting Load (1.8ms)[0m   [0;1mSELECT * FROM "meetings" ORDER BY created_at DESC LIMIT 1 OFFSET 0[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM "meetings" [0m
+Rendering template within layouts/application
+Rendering meetings/index
+  [4;36;1mParticipant Load (1.7ms)[0m   [0;1mSELECT * FROM "participants" WHERE ("participants".meeting_id = 18) [0m
+  [4;35;1mMeeting Load (1.0ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 18) [0m
+Rendered participants/_participant_small (6.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 18) [0m
+Rendered participants/_form (6.6ms)
+Rendered meetings/_meeting (38.6ms)
+Completed in 72ms (View: 45, DB: 5) | 200 OK [http://localhost/meetings]
+
+
+Processing MeetingsController#index (for 127.0.0.1 at 2009-10-25 21:57:11) [GET]
+  [4;35;1mMeeting Load (1.8ms)[0m   [0mSELECT * FROM "meetings" ORDER BY created_at DESC LIMIT 1 OFFSET 0[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM "meetings" [0m
+Rendering template within layouts/application
+Rendering meetings/index
+  [4;35;1mParticipant Load (0.5ms)[0m   [0mSELECT * FROM "participants" WHERE ("participants".meeting_id = 18) [0m
+  [4;36;1mMeeting Load (0.5ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 18) [0m
+Rendered participants/_participant_small (3.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 18) [0m
+Rendered participants/_form (5.8ms)
+Rendered meetings/_meeting (25.9ms)
+Completed in 66ms (View: 42, DB: 3) | 200 OK [http://localhost/meetings]
+
+
+Processing MeetingsController#index (for 127.0.0.1 at 2009-10-25 21:58:01) [GET]
+  [4;36;1mMeeting Load (1.5ms)[0m   [0;1mSELECT * FROM "meetings" ORDER BY created_at DESC LIMIT 1 OFFSET 0[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "meetings" [0m
+Rendering template within layouts/application
+Rendering meetings/index
+  [4;36;1mParticipant Load (0.7ms)[0m   [0;1mSELECT * FROM "participants" WHERE ("participants".meeting_id = 18) [0m
+  [4;35;1mMeeting Load (0.9ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 18) [0m
+Rendered participants/_participant_small (6.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 18) [0m
+Rendered participants/_form (11.2ms)
+Rendered meetings/_meeting (43.5ms)
+Completed in 88ms (View: 64, DB: 4) | 200 OK [http://localhost/meetings]
+
+
+Processing MeetingsController#new (for 127.0.0.1 at 2009-10-25 22:00:02) [GET]
+Rendering template within layouts/application
+Rendering meetings/new
+Rendered meetings/_form (10.4ms)
+Completed in 24ms (View: 14, DB: 0) | 200 OK [http://localhost/meetings/new]
+
+
+Processing MeetingsController#create (for 127.0.0.1 at 2009-10-25 22:00:32) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"DLqMEpzEhFX/wYYOlhTviu6wym9oRB5ym9Q+/STuEHI=", "meeting"=>{"num_days_forward_to_consider"=>"100", "title"=>"Karen Test", "num_days_before_scheduling"=>"2", "number_of_people_who_need_to_respond_before_suggesting_a_date"=>"5", "tentative_days"=>""}}
+  [4;35;1mMeeting Create (0.5ms)[0m   [0mINSERT INTO "meetings" ("num_days_forward_to_consider", "created_at", "title", "updated_at", "num_days_before_scheduling", "number_of_people_who_need_to_respond_before_suggesting_a_date", "tentative_days") VALUES(100, '2009-10-26 02:00:32', 'Karen Test', '2009-10-26 02:00:32', 2, 5, '10/28 10/29 10/30 11/02 11/03 11/04 11/05 11/06 11/09 11/10 11/11 11/12 11/13 11/16 11/17 11/18 11/19 11/20 11/23 11/24 11/25 11/26 11/27 11/30 12/01 12/02 12/03 12/04 12/07 12/08 12/09 12/10 12/11 12/14 12/15 12/16 12/17 12/18 12/21 12/22 12/23 12/24 12/25 12/28 12/29 12/30 12/31 01/01 01/04 01/05 01/06 01/07 01/08 01/11 01/12 01/13 01/14 01/15 01/18 01/19 01/20 01/21 01/22 01/25 01/26 01/27 01/28 01/29 02/01 02/02 02/03 02/04')[0m
+Redirected to http://localhost:3000/meetings
+Completed in 154ms (DB: 1) | 302 Found [http://localhost/meetings]
+
+
+Processing MeetingsController#index (for 127.0.0.1 at 2009-10-25 22:00:32) [GET]
+  [4;36;1mMeeting Load (1.1ms)[0m   [0;1mSELECT * FROM "meetings" ORDER BY created_at DESC LIMIT 1 OFFSET 0[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "meetings" [0m
+Rendering template within layouts/application
+Rendering meetings/index
+  [4;36;1mParticipant Load (0.3ms)[0m   [0;1mSELECT * FROM "participants" WHERE ("participants".meeting_id = 19) [0m
+  [4;35;1mMeeting Load (0.5ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 19) [0m
+Rendered participants/_form (9.7ms)
+Rendered meetings/_meeting (23.6ms)
+Completed in 45ms (View: 31, DB: 2) | 200 OK [http://localhost/meetings]
+
+
+Processing ParticipantsController#create (for 127.0.0.1 at 2009-10-25 22:00:59) [POST]
+  Parameters: {"meeting_id"=>"19", "participant"=>{"name"=>"Jamie", "collection_of_unavailable_days"=>"10/28 10/29 10/30 11/02 11/03 11/04 11/05 11/06 11/09 11/10 11/11 11/12 11/13 11/16 11/17 11/18 11/19 11/20 11/23 11/24 11/25 11/26 11/27 11/30 1"}, "commit"=>"Submit", "authenticity_token"=>"DLqMEpzEhFX/wYYOlhTviu6wym9oRB5ym9Q+/STuEHI="}
+  [4;36;1mMeeting Load (0.5ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 19) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 19) [0m
+  [4;36;1mParticipant Load (0.3ms)[0m   [0;1mSELECT * FROM "participants" WHERE ("participants".meeting_id = 19) [0m
+  [4;35;1mParticipant Create (0.4ms)[0m   [0mINSERT INTO "participants" ("name", "meeting_id", "created_at", "updated_at", "collection_of_unavailable_days") VALUES('Jamie', 19, '2009-10-26 02:01:00', '2009-10-26 02:01:00', '10/28 10/29 10/30 11/02 11/03 11/04 11/05 11/06 11/09 11/10 11/11 11/12 11/13 11/16 11/17 11/18 11/19 11/20 11/23 11/24 11/25 11/26 11/27 11/30 1')[0m
+  [4;36;1mMeeting Update (0.4ms)[0m   [0;1mUPDATE "meetings" SET "updated_at" = '2009-10-26 02:01:00', "tentative_days" = '12/01 12/02 12/03 12/04 12/07 12/08 12/09 12/10 12/11 12/14 12/15 12/16 12/17 12/18 12/21 12/22 12/23 12/24 12/25 12/28 12/29 12/30 12/31 01/01 01/04 01/05 01/06 01/07 01/08 01/11 01/12 01/13 01/14 01/15 01/18 01/19 01/20 01/21 01/22 01/25 01/26 01/27 01/28 01/29 02/01 02/02 02/03 02/04' WHERE "id" = 19[0m
+Redirected to http://localhost:3000/meetings/19
+Completed in 229ms (DB: 2) | 302 Found [http://localhost/meetings/19/participants]
+
+
+Processing MeetingsController#show (for 127.0.0.1 at 2009-10-25 22:01:00) [GET]
+  Parameters: {"id"=>"19"}
+  [4;35;1mMeeting Load (0.8ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 19) [0m
+Rendering template within layouts/application
+Rendering meetings/show
+  [4;36;1mParticipant Load (0.6ms)[0m   [0;1mSELECT * FROM "participants" WHERE ("participants".meeting_id = 19) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 19) [0m
+Rendered participants/_participant_small (3.4ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 19) [0m
+Rendered participants/_form (8.7ms)
+Rendered meetings/_meeting (21.0ms)
+Completed in 53ms (View: 25, DB: 1) | 200 OK [http://localhost/meetings/19]
+
+
+Processing ParticipantsController#create (for 127.0.0.1 at 2009-10-25 22:01:36) [POST]
+  Parameters: {"meeting_id"=>"19", "participant"=>{"name"=>"Charles", "collection_of_unavailable_days"=>"01/01 01/04 01/05 01/06 01/07 01/08 01/11 01/12 01/13 01/14 01/15 01/18 01/19 01/20 01/21 01/22 01/25 01/26 01/27 01/28 01/29 02/01 02/02"}, "commit"=>"Submit", "authenticity_token"=>"DLqMEpzEhFX/wYYOlhTviu6wym9oRB5ym9Q+/STuEHI="}
+  [4;35;1mMeeting Load (0.6ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 19) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 19) [0m
+  [4;35;1mParticipant Load (0.6ms)[0m   [0mSELECT * FROM "participants" WHERE ("participants".meeting_id = 19) [0m
+  [4;36;1mParticipant Create (0.5ms)[0m   [0;1mINSERT INTO "participants" ("name", "meeting_id", "created_at", "updated_at", "collection_of_unavailable_days") VALUES('Charles', 19, '2009-10-26 02:01:36', '2009-10-26 02:01:36', '01/01 01/04 01/05 01/06 01/07 01/08 01/11 01/12 01/13 01/14 01/15 01/18 01/19 01/20 01/21 01/22 01/25 01/26 01/27 01/28 01/29 02/01 02/02')[0m
+  [4;35;1mMeeting Update (0.4ms)[0m   [0mUPDATE "meetings" SET "updated_at" = '2009-10-26 02:01:36', "tentative_days" = '12/01 12/02 12/03 12/04 12/07 12/08 12/09 12/10 12/11 12/14 12/15 12/16 12/17 12/18 12/21 12/22 12/23 12/24 12/25 12/28 12/29 12/30 12/31 02/03 02/04' WHERE "id" = 19[0m
+Redirected to http://localhost:3000/meetings/19
+Completed in 210ms (DB: 2) | 302 Found [http://localhost/meetings/19/participants]
+
+
+Processing MeetingsController#show (for 127.0.0.1 at 2009-10-25 22:02:18) [GET]
+  Parameters: {"id"=>"19"}
+  [4;36;1mMeeting Load (0.6ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 19) [0m
+Rendering template within layouts/application
+Rendering meetings/show
+  [4;35;1mParticipant Load (0.6ms)[0m   [0mSELECT * FROM "participants" WHERE ("participants".meeting_id = 19) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 19) [0m
+Rendered participants/_participant_small (2.8ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 19) [0m
+Rendered participants/_participant_small (2.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 19) [0m
+Rendered participants/_form (7.8ms)
+Rendered meetings/_meeting (19.8ms)
+Completed in 45ms (View: 24, DB: 1) | 200 OK [http://localhost/meetings/19]
+
+
+Processing MeetingsController#index (for 127.0.0.1 at 2009-10-25 22:02:43) [GET]
+  [4;35;1mMeeting Load (1.9ms)[0m   [0mSELECT * FROM "meetings" ORDER BY created_at DESC LIMIT 1 OFFSET 0[0m
+  [4;36;1mSQL (6.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "meetings" [0m
+Rendering template within layouts/application
+Rendering meetings/index
+  [4;35;1mParticipant Load (1.0ms)[0m   [0mSELECT * FROM "participants" WHERE ("participants".meeting_id = 19) [0m
+  [4;36;1mMeeting Load (20.0ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 19) [0m
+Rendered participants/_participant_small (95.7ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 19) [0m
+Rendered participants/_participant_small (2.4ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 19) [0m
+Rendered participants/_form (7.0ms)
+Rendered meetings/_meeting (130.2ms)
+Completed in 169ms (View: 119, DB: 29) | 200 OK [http://localhost/meetings/]
+
+
+Processing MeetingsController#index (for 127.0.0.1 at 2009-10-25 22:07:07) [GET]
+  [4;35;1mMeeting Load (1.6ms)[0m   [0mSELECT * FROM "meetings" ORDER BY created_at DESC LIMIT 1 OFFSET 0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "meetings" [0m
+Rendering template within layouts/application
+Rendering meetings/index
+  [4;35;1mParticipant Load (1.1ms)[0m   [0mSELECT * FROM "participants" WHERE ("participants".meeting_id = 19) [0m
+  [4;36;1mMeeting Load (0.5ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 19) [0m
+Rendered participants/_participant_small (3.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 19) [0m
+Rendered participants/_participant_small (2.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 19) [0m
+Rendered participants/_form (5.9ms)
+Rendered meetings/_meeting (35.7ms)
+
+ActionView::TemplateError (No route matches {:action=>"new", :controller=>"meeting"}) on line #24 of app/views/layouts/application.html.erb:
+21:           <ul>
+22:             <li class="current_page_item"><a href="#">Home</a></li>
+23:             <li>
+24:               <%= link_to "New", :controller => "meeting", :action => "new" %></li>
+25:             <li><a href="#">Photos</a></li>
+26:             <li><a href="#">Links</a></li>
+27:             <li><a href="#">Contact</a></li>
+
+    app/views/layouts/application.html.erb:24
+    app/controllers/meetings_controller.rb:34:in `index'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (58.2ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MeetingsController#index (for 127.0.0.1 at 2009-10-25 22:07:28) [GET]
+  [4;35;1mMeeting Load (1.0ms)[0m   [0mSELECT * FROM "meetings" ORDER BY created_at DESC LIMIT 1 OFFSET 0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "meetings" [0m
+Rendering template within layouts/application
+Rendering meetings/index
+  [4;35;1mParticipant Load (0.6ms)[0m   [0mSELECT * FROM "participants" WHERE ("participants".meeting_id = 19) [0m
+  [4;36;1mMeeting Load (0.5ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 19) [0m
+Rendered participants/_participant_small (3.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 19) [0m
+Rendered participants/_participant_small (3.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 19) [0m
+Rendered participants/_form (6.7ms)
+Rendered meetings/_meeting (34.7ms)
+Completed in 64ms (View: 50, DB: 2) | 200 OK [http://localhost/meetings/]
+
+
+Processing MeetingsController#new (for 127.0.0.1 at 2009-10-25 22:07:36) [GET]
+Rendering template within layouts/application
+Rendering meetings/new
+Rendered meetings/_form (11.4ms)
+Completed in 27ms (View: 16, DB: 0) | 200 OK [http://localhost/meetings/new]
+
+
+Processing MeetingsController#new (for 127.0.0.1 at 2009-10-25 22:09:22) [GET]
+Rendering template within layouts/application
+Rendering meetings/new
+Rendered meetings/_form (13.9ms)
+Completed in 49ms (View: 31, DB: 0) | 200 OK [http://localhost/meetings/new]
+
+
+Processing MeetingsController#index (for 127.0.0.1 at 2009-10-25 22:09:27) [GET]
+  [4;35;1mMeeting Load (1.7ms)[0m   [0mSELECT * FROM "meetings" ORDER BY created_at DESC LIMIT 1 OFFSET 0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "meetings" [0m
+Rendering template within layouts/application
+Rendering meetings/index
+  [4;35;1mParticipant Load (0.9ms)[0m   [0mSELECT * FROM "participants" WHERE ("participants".meeting_id = 19) [0m
+  [4;36;1mMeeting Load (0.4ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 19) [0m
+Rendered participants/_participant_small (3.1ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 19) [0m
+Rendered participants/_participant_small (1.9ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 19) [0m
+Rendered participants/_form (5.6ms)
+Rendered meetings/_meeting (33.6ms)
+Completed in 64ms (View: 41, DB: 4) | 200 OK [http://localhost/]
+
+
+Processing MeetingsController#new (for 127.0.0.1 at 2009-10-25 22:09:30) [GET]
+Rendering template within layouts/application
+Rendering meetings/new
+Rendered meetings/_form (11.7ms)
+Completed in 27ms (View: 17, DB: 0) | 200 OK [http://localhost/meetings/new]
+
+
+Processing MeetingsController#index (for 127.0.0.1 at 2009-10-25 22:09:33) [GET]
+  [4;35;1mMeeting Load (1.7ms)[0m   [0mSELECT * FROM "meetings" ORDER BY created_at DESC LIMIT 1 OFFSET 0[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM "meetings" [0m
+Rendering template within layouts/application
+Rendering meetings/index
+  [4;35;1mParticipant Load (1.0ms)[0m   [0mSELECT * FROM "participants" WHERE ("participants".meeting_id = 19) [0m
+  [4;36;1mMeeting Load (0.8ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 19) [0m
+Rendered participants/_participant_small (6.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 19) [0m
+Rendered participants/_participant_small (3.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 19) [0m
+Rendered participants/_form (11.7ms)
+Rendered meetings/_meeting (46.6ms)
+Completed in 84ms (View: 59, DB: 4) | 200 OK [http://localhost/]
+
+
+Processing MeetingsController#new (for 127.0.0.1 at 2009-10-25 22:09:36) [GET]
+Rendering template within layouts/application
+Rendering meetings/new
+Rendered meetings/_form (21.2ms)
+Completed in 47ms (View: 29, DB: 0) | 200 OK [http://localhost/meetings/new]
