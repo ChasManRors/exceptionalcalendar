@@ -1,0 +1,18 @@
+<p>
+  <b>Foo:</b>
+  <%=h @stuff.foo %>
+</p>
+
+<p>
+  <b>Bar:</b>
+  <%=h @stuff.bar %>
+</p>
+
+<p>
+  <b>Baz:</b>
+  <%=h @stuff.baz %>
+</p>
+
+
+<%= link_to 'Edit', edit_stuff_path(@stuff) %> |
+<%= link_to 'Back', stuffs_path %>

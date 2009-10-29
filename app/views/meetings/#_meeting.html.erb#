@@ -4,20 +4,14 @@
   <b>Meeting created</b>
   <%= meeting.created_at.strftime("%m/%d/%Y %I:%M%p") %>
 </div>
-
-
   <div id="participants">
-
     tentative_days:
-
  <h4> <%=h meeting.tentative_days %> </h4>
   </div>
-
   <div>
     <b>num_days_forward_to_consider:</b>
     <%=h meeting.num_days_forward_to_consider %>
   </div>
-
   <div>
     <b>title:</b>
     <%=h meeting.title %>
@@ -32,16 +26,10 @@
     <b>number_of_people_who_need_to_respond_before_suggesting_a_date:</b>
     <%=h meeting.number_of_people_who_need_to_respond_before_suggesting_a_date %>
   </div>
-
-
 <% end %>
-
-  
 <div>
   <h1>Participants</h1>
   <%= render :partial => 'participants/participant_small', :collection => meeting.participants %>
-  
-  
 </div>
 <div>
   <h1>Create Participant</h1>

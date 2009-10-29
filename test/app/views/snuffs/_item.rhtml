@@ -1,0 +1,15 @@
+	<% for column in Snuff.content_columns %>
+	<div class="<%= column.name -%>"><%=h @snuff.send(column.name) -%></div>
+	<% end %>
+	<%= link_to_remote 'Edit',
+		{:update => @snuff.id, 
+			:url => {:action => 'edit', :id => @snuff },
+			:loading => "new Effect.Fade(#{@snuff.id})",
+			:complete => "new Effect.Appear(#{@snuff.id})"},
+		:class => 'edit_link' %>
+	<%= link_to_remote 'Destroy', 
+	{:update => @snuff.id,
+		:url => {:action => 'destroy', :id => @snuff }, 
+		:confirm => 'Are you sure?',
+		:complete => "new Effect.Puff(#{@snuff.id})"}, 
+	:class => 'destroy_link' %>

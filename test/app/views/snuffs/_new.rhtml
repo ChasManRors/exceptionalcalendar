@@ -1,0 +1,7 @@
+<div class="snuff edit" id="<%= @snuff.id %>">
+	<%= form_remote_tag :update => 'snuffs', :url => {:action => 'create'} %>
+  <%= render :partial => 'form' %>
+	<div class="ctlSave"><%= submit_tag "Create" %></div>
+	<%= link_to_remote 'Cancel', :update=>'snuffs', :url => {:action => 'list'} %>
+<%= end_form_tag %>
+</div>

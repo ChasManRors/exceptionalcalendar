@@ -1,0 +1,2 @@
+module SnuffsHelper
+end

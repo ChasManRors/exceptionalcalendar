@@ -405,6 +405,11 @@ hr { display: none; }
 	max-width:550px;
 }
 
+#right-column {
+	max-width:550px;
+}
+
+
 #maininfo {
 	font-size: 25px;
 	color: #B6ACA2;

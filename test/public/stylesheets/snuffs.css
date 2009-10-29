@@ -1,0 +1,11 @@
+#snuffs { border: solid 1px #000; height: 27em; margin: 2ex; padding: 2ex; position: relative;}
+
+.snuff { clear: both; position:relative;}
+.snuff a {display: block}
+.snuff div, #headers div, .snuff a { float:left; padding: 1ex; }
+
+
+.foo {width: 15.0ex;}
+
+.bar {width: 15.0ex;}
+

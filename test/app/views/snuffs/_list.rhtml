@@ -1,0 +1,19 @@
+<% for @snuff in @snuffs %>
+<div class="snuff" id="<%= @snuff.id -%>">
+	<%= render :partial => 'item' %>
+</div>
+<% end %>
+
+<div id='navLinks'>
+	<%= link_to_remote 'Previous page',
+		{ :update=>'snuffs', 
+			:url=>{:action => 'list', :page => @snuff_pages.current.previous },
+			:complete => "new Effect.Appear ('snuffs')"}, 
+		:class => 'navLink' if @snuff_pages.current.previous %>
+	<%= link_to_remote 'Next page', 
+		{ :update=>'snuffs',
+			:url=>{:action => 'list', :page => @snuff_pages.current.next },
+			:complete => "new Effect.Appear ('snuffs')"}, 
+		:class => 'navLink' if @snuff_pages.current.next %> 
+</div>
+

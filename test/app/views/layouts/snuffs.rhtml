@@ -1,0 +1,26 @@
+<html>
+<head>
+	<title>Snuff Management</title>
+	<%= javascript_include_tag "prototype" %>
+	<%= javascript_include_tag "effects" %>
+  <%= stylesheet_link_tag 'ajax_grid' %>
+	<%= stylesheet_link_tag 'snuffs' %>
+</head>
+<body>
+
+	<%= link_to_remote "New snuff", 
+	{:update => 'snuffs',
+	:url => {:action => 'new'},
+	:complete => "new Effect.Appear('snuffs')"}  %>
+<div id="headers">
+	<% for column in Snuff.content_columns %>
+	<div class="<%= column.name -%>"><%= column.human_name -%></div>
+  <% end %>
+</div>
+
+<div id="snuffs">
+	<%= @content_for_layout %>
+</div>
+
+</body>
+</html>
