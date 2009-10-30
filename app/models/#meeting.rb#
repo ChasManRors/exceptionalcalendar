@@ -17,7 +17,7 @@ class Meeting < ActiveRecord::Base
       arr.push added_day.to_date.strftime( "%m/%d" ) unless not_added_day == "Saturday" || not_added_day == "Sunday"
     }
     self.tentative_days =  arr.join(" ")
-    arr
+
   end
 
   def calc_current_unavailable_days
@@ -25,6 +25,7 @@ class Meeting < ActiveRecord::Base
   end
 
   def calc_current_unavailable_days_sans(participant)
+    debugger
     (self.participants.reject{|p| p.id == participant.id}).map(&:collection_of_unavailable_days).map(&:strip).join(' ').split
   end
 

@@ -32,6 +32,7 @@ class ParticipantsController < ApplicationController
   # GET /participants/1
   # GET /participants/1.xml
   def show
+
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @participant }
