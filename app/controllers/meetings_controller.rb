@@ -64,8 +64,6 @@ class MeetingsController < ApplicationController
   def create
 
     @initial_days = @meeting.calc_tentative_days()
-    #    @meeting.tentative_days =  @initial_days.join(" ")
-
     respond_to do |format|
       if @meeting.save
         flash[:notice] = 'Meeting was successfully created.'

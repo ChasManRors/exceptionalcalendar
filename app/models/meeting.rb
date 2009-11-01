@@ -20,12 +20,22 @@ class Meeting < ActiveRecord::Base
     arr
   end
 
-  def calc_current_unavailable_days
-      self.participants.map(&:collection_of_unavailable_days).map(&:strip).join(' ').split
-  end
-
   def calc_current_unavailable_days_sans(participant)
     (self.participants.reject{|p| p.id == participant.id}).map(&:collection_of_unavailable_days).map(&:strip).join(' ').split
+  end
+
+  def add_new_participant(participant)
+    participant_unavailable_days = participant.collection_of_unavailable_days.split
+    previous_tentative_days = self.tentative_days.split
+    self.tentative_days = (previous_tentative_days - participant_unavailable_days).join(' ')
+    self.participants << participant
+  end
+
+  def new_meeting_params_from(participant, params)
+    @tentative_unavailable_days = self.calc_current_unavailable_days_sans(participant)
+    @tentative_unavailable_days = @tentative_unavailable_days + params[:collection_of_unavailable_days].split
+    @tentative_days = self.calc_tentative_days() - @tentative_unavailable_days
+    self.attributes.merge({"tentative_days" => @tentative_days.join(' ')})
   end
 
 end

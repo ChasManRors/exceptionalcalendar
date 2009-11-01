@@ -3,6 +3,7 @@ class ParticipantsController < ApplicationController
   before_filter :find_participant, :only => [:show, :destroy, :edit, :update]
   before_filter :find_participants, :only => :index
   before_filter :new_participant, :only => [:new, :create]
+  before_filter :update_participant_params, :only => [:update]
 
   def setup_enclosing_resources
     @meeting = Meeting.find(params[:meeting_id])
@@ -17,8 +18,34 @@ class ParticipantsController < ApplicationController
   end
   def new_participant
     setup_enclosing_resources
-    @participant = @meeting.participants.new(params[:participant])
+    passed_in_available_days = params[:participant][:available_days]
+    if passed_in_available_days.blank?
+      unavailable_days = (params[:participant][:collection_of_unavailable_days]).split
+    else
+      available_array = passed_in_available_days.split
+      unavailable_days = @meeting.calc_tentative_days -  available_array
+    end
+    @participant = Participant.new
+    @participant.name = params[:participant][:name]
+    @participant.meeting_id = @meeting.id
+    @participant.collection_of_unavailable_days = unavailable_days.join(' ')
+    # @meeting.participants << @participant
   end
+
+# TODO push down into the model
+  def update_participant_params
+    setup_enclosing_resources
+    passed_in_available_days = params[:participant][:available_days]
+    if passed_in_available_days.blank?
+      unavailable_days = (params[:participant][:collection_of_unavailable_days]).split
+    else
+      available_array = passed_in_available_days.split
+      unavailable_days = @meeting.calc_tentative_days - available_array
+    end
+    params[:participant].delete(:available_days)
+    params[:participant][:collection_of_unavailable_days] = unavailable_days.join(' ')
+  end
+
 
   # GET /participants
   # GET /participants.xml
@@ -55,17 +82,14 @@ class ParticipantsController < ApplicationController
   # POST /participants
   # POST /participants.xml
   def create
-    @meeting = @participant.meeting
-    @all_tentative_days = @meeting.calc_tentative_days
-    @previous_current_unavailable_days = @meeting.calc_current_unavailable_days
-    @collection_of_unavailable_days = @participant.collection_of_unavailable_days.split
-    @all_current_unavailable_days = @previous_current_unavailable_days + @collection_of_unavailable_days
-    @tentative_days = @all_tentative_days - @all_current_unavailable_days 
-    @participant.meeting.tentative_days = @tentative_days.join(' ')
+# TODO remove next line not needed
+    # @meeting = @participant.meeting
+    @meeting.add_new_participant(@participant)
+
     respond_to do |format|
-      if @participant.save && @participant.meeting.save
+      if @participant.save && @meeting.save
         flash[:notice] = 'Participant  and meeting updates were successfully created.'
-#        format.html { redirect_to(meeting_participants_path(@meeting)) }
+#       format.html { redirect_to(meeting_participants_path(@meeting)) }
         format.html { redirect_to(meeting_path(@meeting)) }
         format.xml  { render :xml => @participant, :status => :created, :location => @participant }
       else
@@ -78,17 +102,10 @@ class ParticipantsController < ApplicationController
   # PUT /participants/1
   # PUT /participants/1.xml
   def update
-    @meeting = @participant.meeting
-    @calendar_subset = @meeting.calc_tentative_days
-    @previous_current_unavailable_days = @meeting.calc_current_unavailable_days_sans(@participant)
-#    @collection_of_unavailable_days = @participant.collection_of_unavailable_days.split
-    @collection_of_unavailable_days = params[:participant][:collection_of_unavailable_days].split
-    @all_current_unavailable_days = @previous_current_unavailable_days + @collection_of_unavailable_days
-    @tentative_days = @calendar_subset - @all_current_unavailable_days 
-    @participant.meeting.tentative_days = @tentative_days.join(' ')
-
     respond_to do |format|
-      if @participant.update_attributes(params[:participant]) && @participant.meeting.save
+
+     if @participant.update_attributes(params[:participant]) && @meeting.update_attributes(@meeting.new_meeting_params_from(@participant, params[:participant]))
+#     if @participant.update_attributes(params[:participant]) && @participant.meeting.save
         flash[:notice] = 'Participant was successfully updated.'
 #        format.html { redirect_to(meeting_participant_path(@meeting, @participant)) }
         format.html { redirect_to(meeting_path(@meeting)) }
