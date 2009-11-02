@@ -6,16 +6,18 @@
         <%= f.text_field :name %>
   </div>
 
+
   <div>
         <%= f.label :Unavailable_Days %>
         <%= f.text_field :collection_of_unavailable_days %>
   </div>
 
+<sub>  <small>Can not use both unavailable and available simultaneously</small></sub>
+
   <div>
         <%= f.label :Available_Days %>
 	<%= f.text_field :available_days, :value => ''  %>
   </div>
-
 
   <div>
     <%= f.submit 'Submit' %>

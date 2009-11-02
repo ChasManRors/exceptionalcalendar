@@ -82,14 +82,10 @@ class ParticipantsController < ApplicationController
   # POST /participants
   # POST /participants.xml
   def create
-# TODO remove next line not needed
-    # @meeting = @participant.meeting
     @meeting.add_new_participant(@participant)
-
     respond_to do |format|
       if @participant.save && @meeting.save
         flash[:notice] = 'Participant  and meeting updates were successfully created.'
-#       format.html { redirect_to(meeting_participants_path(@meeting)) }
         format.html { redirect_to(meeting_path(@meeting)) }
         format.xml  { render :xml => @participant, :status => :created, :location => @participant }
       else
@@ -103,11 +99,8 @@ class ParticipantsController < ApplicationController
   # PUT /participants/1.xml
   def update
     respond_to do |format|
-
      if @participant.update_attributes(params[:participant]) && @meeting.update_attributes(@meeting.new_meeting_params_from(@participant, params[:participant]))
-#     if @participant.update_attributes(params[:participant]) && @participant.meeting.save
         flash[:notice] = 'Participant was successfully updated.'
-#        format.html { redirect_to(meeting_participant_path(@meeting, @participant)) }
         format.html { redirect_to(meeting_path(@meeting)) }
         format.xml  { head :ok }
       else
@@ -121,7 +114,6 @@ class ParticipantsController < ApplicationController
   # DELETE /participants/1.xml
   def destroy
     @participant.destroy
-
     flash[:notice] = 'Participant was successfully removed.'
     respond_to do |format|
       format.html { redirect_to(meeting_participants_path(@meeting)) }
