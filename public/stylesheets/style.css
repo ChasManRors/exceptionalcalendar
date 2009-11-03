@@ -172,6 +172,16 @@ hr { display: none; }
 	color: #39561D;
 }
 
+#search-near {
+	height: 44px;
+	display: block;
+	float: left;
+	padding: 12px 25px 0px 25px;
+	background: url(../images/img04.jpg) no-repeat right 8px;
+}
+
+
+
 /* Page */
 
 #page {
@@ -198,7 +208,7 @@ hr { display: none; }
 
 #logo h1 {
 	padding-left: 40px;
-	padding-top: 90px; 
+	padding-top: 60px; 
 }
 
 #logo h1 a {
