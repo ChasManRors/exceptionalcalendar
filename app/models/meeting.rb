@@ -7,6 +7,9 @@ class Meeting < ActiveRecord::Base
 
   has_many :participants
 
+  has_many :comments
+
+
   def calc_tentative_days()
     arr = []
     b = num_days_forward_to_consider.to_i.times{|d| 

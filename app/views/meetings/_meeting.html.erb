@@ -13,11 +13,16 @@
 	<h3>No mutually agreeable days ;(</h3>
       <% end %>
 
-
   </div>
+
+  <div>
+    Additional information about the meeting <%= link_to 'here', meeting_comments_path(meeting) %>
+  </div> 
+
   <div>
     <b>Created: </b> <%= meeting.created_at.strftime("%m/%d/%Y %I:%M%p") %>
   </div>
+
   <div>
     <b>Look forward: </b> <%=h meeting.num_days_forward_to_consider %> <b>days</b>
   </div>
