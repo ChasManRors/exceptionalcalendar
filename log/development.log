@@ -20994,3 +20994,102 @@ Rendered comments/_comment (6.6ms)
 Rendered comments/_comment (0.5ms)
 Rendered comments/_comment (0.4ms)
 Completed in 34ms (View: 18, DB: 2) | 200 OK [http://localhost/meetings/40/comments]
+  [4;36;1mMeeting Load (0.8ms)[0m   [0;1mSELECT * FROM "meetings" ORDER BY meetings.id DESC LIMIT 1[0m
+  [4;35;1mComment Load (0.4ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".meeting_id = 40) [0m
+  [4;36;1mComment Create (1.0ms)[0m   [0;1mINSERT INTO "comments" ("name", "meeting_id", "created_at", "body", "updated_at", "subject", "email") VALUES(NULL, 40, '2009-11-05 03:44:13', NULL, '2009-11-05 03:44:13', NULL, NULL)[0m
+
+
+Processing MeetingsController#new (for 127.0.0.1 at 2009-11-04 22:47:40) [GET]
+Rendering template within layouts/application
+Rendering meetings/new
+Rendered meetings/_form (15.2ms)
+Completed in 44ms (View: 24, DB: 0) | 200 OK [http://localhost/meetings/new]
+
+
+Processing CreditsController#index (for 127.0.0.1 at 2009-11-04 22:47:44) [GET]
+Rendering template within layouts/application
+Rendering credits/show
+Completed in 19ms (View: 15, DB: 0) | 200 OK [http://localhost/credits]
+
+
+Processing CreditsController#index (for 127.0.0.1 at 2009-11-04 23:27:56) [GET]
+Rendering template within layouts/application
+Rendering credits/show
+Completed in 14ms (View: 11, DB: 0) | 200 OK [http://localhost/credits]
+
+
+Processing CreditsController#index (for 127.0.0.1 at 2009-11-04 23:28:38) [GET]
+Rendering template within layouts/application
+Rendering credits/show
+Completed in 15ms (View: 9, DB: 0) | 200 OK [http://localhost/credits]
+
+
+Processing MeetingsController#index (for 127.0.0.1 at 2009-11-04 23:31:31) [GET]
+  [4;36;1mMeeting Load (1.1ms)[0m   [0;1mSELECT * FROM "meetings" ORDER BY created_at DESC LIMIT 1 OFFSET 0[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "meetings" [0m
+Rendering template within layouts/application
+Rendering meetings/index
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "participants" WHERE ("participants".meeting_id = 40) [0m
+  [4;35;1mParticipant Load (0.3ms)[0m   [0mSELECT * FROM "participants" WHERE ("participants".meeting_id = 40) [0m
+  [4;36;1mMeeting Load (0.5ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 40) [0m
+Rendered participants/_form (9.1ms)
+Rendered meetings/_meeting (24.0ms)
+Completed in 46ms (View: 31, DB: 3) | 200 OK [http://localhost/]
+
+
+Processing MeetingsController#index (for 127.0.0.1 at 2009-11-04 23:34:06) [GET]
+  [4;35;1mMeeting Load (1.9ms)[0m   [0mSELECT * FROM "meetings" ORDER BY created_at DESC LIMIT 1 OFFSET 0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "meetings" [0m
+Rendering template within layouts/application
+Rendering meetings/index
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "participants" WHERE ("participants".meeting_id = 40) [0m
+  [4;36;1mParticipant Load (0.2ms)[0m   [0;1mSELECT * FROM "participants" WHERE ("participants".meeting_id = 40) [0m
+  [4;35;1mMeeting Load (0.5ms)[0m   [0mSELECT * FROM "meetings" WHERE ("meetings"."id" = 40) [0m
+Rendered participants/_form (8.5ms)
+Rendered meetings/_meeting (25.7ms)
+Completed in 157ms (View: 132, DB: 3) | 200 OK [http://localhost/]
+
+
+Processing MeetingsController#index (for 127.0.0.1 at 2009-11-04 23:34:42) [GET]
+  [4;36;1mMeeting Load (2.0ms)[0m   [0;1mSELECT * FROM "meetings" ORDER BY created_at DESC LIMIT 1 OFFSET 0[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM "meetings" [0m
+Rendering template within layouts/application
+Rendering meetings/index
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "participants" WHERE ("participants".meeting_id = 40) [0m
+  [4;35;1mParticipant Load (0.2ms)[0m   [0mSELECT * FROM "participants" WHERE ("participants".meeting_id = 40) [0m
+  [4;36;1mMeeting Load (0.5ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 40) [0m
+Rendered participants/_form (9.0ms)
+Rendered meetings/_meeting (25.1ms)
+Completed in 68ms (View: 40, DB: 4) | 200 OK [http://localhost/]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2009-11-04 23:34:46) [GET]
+  Parameters: {"meeting_id"=>"40"}
+  [4;35;1mComment Load (1.2ms)[0m   [0mSELECT * FROM "comments" [0m
+Rendering template within layouts/application
+Rendering comments/index
+Rendered comments/_comment (4.2ms)
+Rendered comments/_comment (0.3ms)
+Rendered comments/_comment (0.2ms)
+Rendered comments/_comment (0.2ms)
+Completed in 97ms (View: 12, DB: 1) | 200 OK [http://localhost/meetings/40/comments]
+
+
+Processing MeetingsController#new (for 127.0.0.1 at 2009-11-04 23:35:12) [GET]
+Rendering template within layouts/application
+Rendering meetings/new
+Rendered meetings/_form (9.0ms)
+Completed in 26ms (View: 14, DB: 0) | 200 OK [http://localhost/meetings/new]
+
+
+Processing MeetingsController#index (for 127.0.0.1 at 2009-11-04 23:35:15) [GET]
+  [4;36;1mMeeting Load (1.2ms)[0m   [0;1mSELECT * FROM "meetings" ORDER BY created_at DESC LIMIT 1 OFFSET 0[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "meetings" [0m
+Rendering template within layouts/application
+Rendering meetings/index
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "participants" WHERE ("participants".meeting_id = 40) [0m
+  [4;35;1mParticipant Load (0.3ms)[0m   [0mSELECT * FROM "participants" WHERE ("participants".meeting_id = 40) [0m
+  [4;36;1mMeeting Load (0.6ms)[0m   [0;1mSELECT * FROM "meetings" WHERE ("meetings"."id" = 40) [0m
+Rendered participants/_form (9.3ms)
+Rendered meetings/_meeting (25.1ms)
+Completed in 48ms (View: 32, DB: 3) | 200 OK [http://localhost/]
