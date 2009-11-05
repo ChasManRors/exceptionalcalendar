@@ -6,55 +6,68 @@
     <h1 style="text-decoration: underline;">
       <%=h meeting.title %>.
     </h1>
-
       <% if !meeting.tentative_days.split.first.blank? %>
-	<h3> How about <%= meeting.tentative_days.split.first %>, is that good?</h3> 
+	<h3> How about <%= meeting.tentative_days.split.first %>, 
+	  is that good?</h3> 
       <% else %>
 	<h3>No mutually agreeable days ;(</h3>
       <% end %>
-
   </div>
 
   <div>
-    Additional information about the meeting <%= link_to 'here', meeting_comments_path(meeting) %>
+    [CURRENT - get this to work!] <br />
+
+    Additional information about the meeting 
+    <%= link_to 'here', meeting_comments_path(meeting) %>
+    <!-- <#%= link_to 'here', new_meeting_comment_path(meeting, meeting.comments.new) %> -->
+
+    
+<!-- <#%= render :partial => "meetings/meetingcomment", :collection => meeting.comments %> -->
   </div> 
 
   <div>
-    <b>Created: </b> <%= meeting.created_at.strftime("%m/%d/%Y %I:%M%p") %>
+    <b>Created: </b> 
+    <%= meeting.created_at.strftime("%m/%d/%Y %I:%M%p") %>
   </div>
 
   <div>
-    <b>Look forward: </b> <%=h meeting.num_days_forward_to_consider %> <b>days</b>
+    <b>Look forward: </b> 
+    <%=h meeting.num_days_forward_to_consider %> 
+    <b>days</b>
   </div>
+
   <div>
-    <b>First day on Calendar:</b> <%=h (meeting.created_at + meeting.num_days_before_scheduling.day).strftime("%m/%d/%y") %>
+    <b>First day on Calendar:</b> 
+    <%=h (meeting.created_at + meeting.num_days_before_scheduling.day).strftime("%m/%d/%y") %>
   </div>
+
   <!-- <div> -->
   <!--   <b>Next possible:</b> <#%= meeting.tentative_days.split.first %> -->
   <!-- </div> -->
   <div>    
-    <b>Responses:</b> <br />
-    <b>Expected:</b>     <%=h meeting.number_of_people_who_need_to_respond_before_suggesting_a_date %><br />
-    <b>Currently have:</b> <%=h meeting.participants.count %>
+    <b>Responses expected:</b>
+    <%=h meeting.number_of_people_who_need_to_respond_before_suggesting_a_date %><br />
+    <b>Current responses:</b> 
+    <%=h meeting.participants.count %>
   </div>
 
   <div id="participants"> 
-    <b>Availabile Days:</b> <%=h meeting.tentative_days %>
+    <b>Availabile Days:</b> 
+    <%=h meeting.tentative_days %>
   </div>
 
-
-
   </div>
+
 <!-- <#% end %> -->
 
   <div>
     <h1>Participants</h1>
-    
-    <%= render :partial => 'participants/participant_small', :collection => meeting.participants %>
-    
+    <%= render :partial => 'participants/participant_small', 
+	:collection => meeting.participants %>
   </div>
   
   <div>
     <h1>Create Participant</h1>
-    <%= render :partial => 'participants/form', :object => meeting.participants.new %>
+    <%= render :partial => 'participants/form', 
+	:object => meeting.participants.new %>
   </div>

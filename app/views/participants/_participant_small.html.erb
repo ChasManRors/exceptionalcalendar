@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-  
 <% div_for(participant_small) do %>
-
+  
   <b>Name:</b> <%= participant_small.name %> <br />
-
-
+  
   <div id="participants">
     <b>Unavailable:</b>
     <%= participant_small.collection_of_unavailable_days %>  
-    <%= link_to 'edit', edit_meeting_participant_path(participant_small.meeting,participant_small) %>
+    <%= link_to 'edit', 
+	edit_meeting_participant_path(participant_small.meeting,
+				      participant_small) %>
   </div>
 <% end %>
-
-

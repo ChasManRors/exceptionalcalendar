@@ -1,0 +1,11 @@
+  <div>
+    <h1>Comments</h1>
+    <%= render :partial => 'comments/comment_small', 
+	:collection => meeting.comments %>
+  </div>
+  
+  <div>
+    <h1>Create Comment</h1>
+    <%= render :partial => 'comments/form', 
+	:object => meeting.comments.new %>
+  </div>

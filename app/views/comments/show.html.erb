@@ -1,22 +1,4 @@
-<p>
-  <b>Name:</b>
-  <%=h @comment.name %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%=h @comment.email %>
-</p>
-
-<p>
-  <b>Subject:</b>
-  <%=h @comment.subject %>
-</p>
-
-<p>
-  <b>Body:</b>
-  <%=h @comment.body %>
-</p>
+<%= render :partial => '_comment.html.erb' %>
 
 <p>
   <b>Meeting:</b>
