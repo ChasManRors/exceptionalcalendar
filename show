@@ -1,0 +1,36 @@
+                    root        /                                                     {:controller=>"meetings", :action=>"index"}
+    meeting_participants GET    /meetings/:meeting_id/participants(.:format)          {:controller=>"participants", :action=>"index"}
+                         POST   /meetings/:meeting_id/participants(.:format)          {:controller=>"participants", :action=>"create"}
+ new_meeting_participant GET    /meetings/:meeting_id/participants/new(.:format)      {:controller=>"participants", :action=>"new"}
+edit_meeting_participant GET    /meetings/:meeting_id/participants/:id/edit(.:format) {:controller=>"participants", :action=>"edit"}
+     meeting_participant GET    /meetings/:meeting_id/participants/:id(.:format)      {:controller=>"participants", :action=>"show"}
+                         PUT    /meetings/:meeting_id/participants/:id(.:format)      {:controller=>"participants", :action=>"update"}
+                         DELETE /meetings/:meeting_id/participants/:id(.:format)      {:controller=>"participants", :action=>"destroy"}
+        meeting_comments GET    /meetings/:meeting_id/comments(.:format)              {:controller=>"comments", :action=>"index"}
+                         POST   /meetings/:meeting_id/comments(.:format)              {:controller=>"comments", :action=>"create"}
+     new_meeting_comment GET    /meetings/:meeting_id/comments/new(.:format)          {:controller=>"comments", :action=>"new"}
+    edit_meeting_comment GET    /meetings/:meeting_id/comments/:id/edit(.:format)     {:controller=>"comments", :action=>"edit"}
+         meeting_comment GET    /meetings/:meeting_id/comments/:id(.:format)          {:controller=>"comments", :action=>"show"}
+                         PUT    /meetings/:meeting_id/comments/:id(.:format)          {:controller=>"comments", :action=>"update"}
+                         DELETE /meetings/:meeting_id/comments/:id(.:format)          {:controller=>"comments", :action=>"destroy"}
+                meetings GET    /meetings(.:format)                                   {:controller=>"meetings", :action=>"index"}
+                         POST   /meetings(.:format)                                   {:controller=>"meetings", :action=>"create"}
+             new_meeting GET    /meetings/new(.:format)                               {:controller=>"meetings", :action=>"new"}
+            edit_meeting GET    /meetings/:id/edit(.:format)                          {:controller=>"meetings", :action=>"edit"}
+                 meeting GET    /meetings/:id(.:format)                               {:controller=>"meetings", :action=>"show"}
+                         PUT    /meetings/:id(.:format)                               {:controller=>"meetings", :action=>"update"}
+                         DELETE /meetings/:id(.:format)                               {:controller=>"meetings", :action=>"destroy"}
+                 credits GET    /credits(.:format)                                    {:controller=>"credits", :action=>"index"}
+                         POST   /credits(.:format)                                    {:controller=>"credits", :action=>"create"}
+              new_credit GET    /credits/new(.:format)                                {:controller=>"credits", :action=>"new"}
+             edit_credit GET    /credits/:id/edit(.:format)                           {:controller=>"credits", :action=>"edit"}
+                  credit GET    /credits/:id(.:format)                                {:controller=>"credits", :action=>"show"}
+                         PUT    /credits/:id(.:format)                                {:controller=>"credits", :action=>"update"}
+                         DELETE /credits/:id(.:format)                                {:controller=>"credits", :action=>"destroy"}
+                comments GET    /comments(.:format)                                   {:controller=>"comments", :action=>"index"}
+                         POST   /comments(.:format)                                   {:controller=>"comments", :action=>"create"}
+             new_comment GET    /comments/new(.:format)                               {:controller=>"comments", :action=>"new"}
+            edit_comment GET    /comments/:id/edit(.:format)                          {:controller=>"comments", :action=>"edit"}
+                 comment GET    /comments/:id(.:format)                               {:controller=>"comments", :action=>"show"}
+                         PUT    /comments/:id(.:format)                               {:controller=>"comments", :action=>"update"}
+                         DELETE /comments/:id(.:format)                               {:controller=>"comments", :action=>"destroy"}

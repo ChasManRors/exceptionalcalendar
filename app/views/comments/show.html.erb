@@ -1,9 +1,6 @@
-<%= render :partial => '_comment.html.erb' %>
+<h2>  <%=h @comment.meeting.title %></h2>
 
-<p>
-  <b>Meeting:</b>
-  <%=h @comment.meeting %>
-</p>
+<%= render :partial => 'comment' %>
 
 
 <%= link_to 'Edit', edit_comment_path(@comment) %> |

@@ -40,7 +40,8 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.xml
   def create
-    @comment = Comment.new(params[:comment])
+    @meeting = Meeting.find(params[:meeting_id])
+    @comment = @meeting.comments.build(params[:comment])
 
     respond_to do |format|
       if @comment.save

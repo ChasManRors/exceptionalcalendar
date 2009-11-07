@@ -1,3 +1,82 @@
+  <div>
+    <div>
+      <h1 style="text-decoration: underline;">
+	<%=h @meeting.title %>.
+      </h1>
+      <% if !@meeting.tentative_days.split.first.blank? %>
+	<h3> How about <%= @meeting.tentative_days.split.first %>, 
+	  is that good?</h3> 
+      <% else %>
+	<h3>No mutually agreeable days ;(</h3>
+      <% end %>
+    </div>
+    
+    <div>
+      <b>Created: </b> 
+      <%= @meeting.created_at.strftime("%m/%d/%Y %I:%M%p") %>
+    </div>
+    
+    <div>
+      <b>Look forward: </b> 
+      <%=h @meeting.num_days_forward_to_consider %> 
+      <b>days</b>
+    </div>
+    
+    <div>
+      <b>First day on Calendar:</b> 
+      <%=h (@meeting.created_at + @meeting.num_days_before_scheduling.day).strftime("%m/%d/%y") %>
+    </div>
+    
+    <div>
+      <b>Next possible:</b> <%= @meeting.tentative_days.split.first %>
+    </div>
 
-  <%= render :partial => 'meetings/meeting', :object => @meeting %>
+    <div>    
+      <b>Responses expected:</b>
+      <%=h @meeting.number_of_people_who_need_to_respond_before_suggesting_a_date %><br />
+      <b>Current responses:</b> 
+      <%=h @meeting.participants.count %>
+    </div>
+    
+    <div id="participants"> 
+      <b>Availabile Days:</b> 
+      <%=h @meeting.tentative_days %>
+    </div>
+    
+  </div>
 
+  <% if @meeting.comments.count != 0 -%>
+    <h1>Listing comments</h1>
+  <%end -%>
+
+  <%= render :partial => "comments/comment", :collection => @meeting.comments %>
+
+<h1>New comment</h1>
+
+<% form_for([@meeting, Comment.new]) do |f| %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :subject %><br />
+    <%= f.text_field :subject %>
+  </p>
+  <p>
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </p>
+  <!-- <p> -->
+    <!-- <# %= f.label :meeting %><br /> -->
+    <!-- <# %= f.text_field :meeting %> -->
+  <!-- </p> -->
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<!-- <# %= link_to 'Back', comments_path %> -->

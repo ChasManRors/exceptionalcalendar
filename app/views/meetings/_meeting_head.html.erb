@@ -1,13 +1,14 @@
 
-<!-- <# %= render :partial => "meetings/meeting_head", :object => meeting %> -->
   <div>
+
     <div>
+      <b>Title:</b>
+      <h1 style="text-decoration: underline;">
+	<%=h meeting.title %>.
+      </h1>
       <% if !meeting.tentative_days.split.first.blank? %>
-	<div id="#participants">
-	  <h1> 
-	    Is (<%= meeting.tentative_days.split.first %>) good for: <br /> <%=h meeting.title %> meeting?
-	  </h1> 
-	</div>
+	<h3> How about <%= meeting.tentative_days.split.first %>, 
+	  is that good?</h3> 
       <% else %>
 	<h3>No mutually agreeable days ;(</h3>
       <% end %>
@@ -31,7 +32,7 @@
     </div>
     
     <div>
-      <b>Next possible:</b> <%= meeting.tentative_days.split.first %>
+      <b>Next possible:</b> <#%= meeting.tentative_days.split.first %>
     </div>
 
     <div>    
@@ -47,22 +48,4 @@
     </div>
     
   </div>
-
-<div>
-  <small> Additional information about the meeting 
-    <%= link_to "here", meeting_path(meeting) %>
-  </small>
-</div> 
-
-
-  <div>
-    <h1>Participants</h1>
-    <%= render :partial => 'participants/participant_small', 
-	:collection => meeting.participants %>
-  </div>
   
-  <div>
-    <h1>Create Participant</h1>
-    <%= render :partial => 'participants/form', 
-	:object => meeting.participants.new %>
-  </div>
